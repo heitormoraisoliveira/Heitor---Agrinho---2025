@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ligando o Campo à Cidade</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    /* Fundo só com gradiente verde, sem imagem */
+    body {
+      background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+    /* Conteúdo principal com fundo branco para boa leitura */
+    main {
+      max-width: 1100px;
+      margin: 3rem auto 5rem auto;
+      background: #f7f9f4;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      padding: 2rem 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    header {
+      background: #2f7a21;
+      padding: 2rem 1.5rem;
+      color: #e9f5db;
+      text-align: center;
+      box-shadow: 0 5px 15px rgb(0 0 0 / 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-radius: 0 0 15px 15px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #46760a;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #a8e063;
+      padding-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    /* Interactive read more */
+    .read-more-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      color: #2a3b12;
+    }
+    .read-more-active {
+      max-height: 500px;
+      margin-top: 1rem;
+    }
+    .btn-read-more {
+      display: inline-block;
+      background: #56ab2f;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: none;
+      box-shadow: 0 3px 8px rgba(86,171,47,0.6);
+    }
+    .btn-read-more:hover {
+      background: #4a9527;
+      box-shadow: 0 5px 15px rgba(74,149,39,0.8);
+    }
+
+    /* Grid for examples section */
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+    }
+    .example-card {
+      background: #ddefbb;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(74,149,39,0.3);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .example-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(74,149,39,0.45);
+    }
+    .example-card h3 {
+      color: #386010;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .example-card p {
+      color: #264401;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      color: #e9f5db;
+      background: #2f7a21;
+      box-shadow: 0 -3px 15px rgba(0,0,0,0.3);
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      border-radius: 15px 15px 0 0;
+    }
+
+    /* Responsive text adjustments */
+    @media (max-width: 680px){
+      header h1 {
+        font-size: 1.8rem;
+      }
+      main {
+        margin: 2rem 1rem 3rem 1rem;
+        padding: 1.5rem 2rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ligando o Campo à Cidade</h1>
+    <p>Uma jornada moderna e interativa pelo elo entre a vida rural e urbana</p>
+  </header>
+  <main>
+    <section>
+      <h2>Por Que Ligar o Campo à Cidade?</h2>
+      <p>
+        O campo e a cidade, embora tão diferentes, fazem parte de um mesmo ciclo vital para o desenvolvimento sustentável do nosso país e do mundo. Integrar essas duas realidades significa fortalecer a economia, promover a segurança alimentar e valorizar as culturas diversas.
+      </p>
+      <button class="btn-read-more" data-target="sec1">Leia mais</button>
+      <div class="read-more-content" id="sec1">
+        <p>
+          Essa ligação cria pontes que permitem a troca de conhecimentos, bens e serviços, além de contribuir para o equilíbrio ambiental, social e econômico. Através de tecnologias, infraestrutura e políticas públicas eficazes, é possível reduzir desigualdades e fomentar o crescimento conjunto.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Benefícios da Conexão Rural-Urbana</h2>
+      <p>
+        A interação entre o campo e a cidade traz inúmeros benefícios, que impactam desde a qualidade de vida até a preservação ambiental:
+      </p>
+      <ul>
+        <li>Melhoria na infraestrutura e acesso a serviços básicos no campo.</li>
+        <li>Incentivo à agricultura sustentável e produção local.</li>
+        <li>Fortalecimento dos mercados regionais e cadeias produtivas.</li>
+        <li>Troca cultural e valorização das tradições.</li>
+      </ul>
+      <button class="btn-read-more" data-target="sec2">Saiba mais</button>
+      <div class="read-more-content" id="sec2">
+        <p>
+          Além disso, consumidores urbanos podem acessar alimentos frescos e de melhor qualidade, enquanto produtores rurais ganham melhores oportunidades de negócios. Essa sinergia fortalece economias locais, reduz o êxodo rural e promove o desenvolvimento equilibrado.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Desafios a Superar</h2>
+      <p>
+        Apesar dos benefícios, essa ligação enfrenta desafios que necessitam de atenção:
+      </p>
+      <ul>
+        <li>Falta de infraestrutura adequada para transporte e comunicação.</li>
+        <li>Políticas públicas insuficientes ou mal direcionadas.</li>
+        <li>Desigualdade social e econômica entre áreas rurais e urbanas.</li>
+        <li>Impactos ambientais causados por práticas inadequadas.</li>
+      </ul>
+      <button class="btn-read-more" data-target="sec3">Entenda os desafios</button>
+      <div class="read-more-content" id="sec3">
+        <p>
+          Para construir pontes sólidas, é fundamental investir em educação, tecnologia e serviços que possam conectar os dois mundos de forma sustentável. A conscientização da população e o diálogo entre os setores também são essenciais para o progresso.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Exemplos Práticos de Integração</h2>
+      <div class="examples-grid">
+        <div class="example-card" tabindex="0" aria-describedby="ex1-desc">
+          <h3>Feiras Agroecológicas Urbanas</h3>
+          <p id="ex1-desc">Produtores rurais vendendo diretamente para os consumidores urbanos, promovendo alimentos frescos e produzidos de forma sustentável.</p>
+        </div>
+        <div class="example-card" tabindex="0" aria-describedby="ex2-desc">
+          <h3>Turismo Rural</h3>
+          <p id="ex2-desc">Experiências que conectam visitantes urbanos às tradições, paisagens e práticas do campo, gerando renda e conscientização.</p>
+        </div>
+        <div class="example-card" tabindex="0" aria-describedby="ex3-desc">
+          <h3>Plataformas Digitais de Comercialização</h3>
+          <p id="ex3-desc">Ferramentas tecnológicas facilitando a venda e logística de produtos rurais diretamente para o mercado consumidor da cidade.</p>
+        </div>
+        <div class="example-card" tabindex="0" aria-describedby="ex4-desc">
+          <h3>Cooperativas e Associações</h3>
+          <p id="ex4-desc">Estruturas organizadas para fortalecer a voz dos produtores rurais e melhorar a assistência técnica e comercial.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Ligando o Campo à Cidade - Criado por Heitor do Agro Morais
+  </footer>
+
+  <script>
+    // Função para o botão "Leia mais"
+    document.querySelectorAll('.btn-read-more').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const content = document.getElementById(targetId);
+        if (content.classList.contains('read-more-active')) {
+          content.classList.remove('read-more-active');
+          btn.textContent = "Leia mais";
+        } else {
+          content.classList.add('read-more-active');
+          btn.textContent = "Leia menos";
+        }
+      });
+    });
+
+    // Adiciona teclado para foco acessível e efeito hover nos cards
+    document.querySelectorAll('.example-card').forEach(card => {
+      card.addEventListener('focus', () => {
+        card.style.transform = "translateY(-8px)";
+        card.style.boxShadow = "0 10px 30px rgba(74,149,39,0.45)";
+      });
+      card.addEventListener('blur', () => {
+        card.style.transform = "none";
+        card.style.boxShadow = "0 5px 15px rgba(74,149,39,0.3)";
+      });
+    });
+  </script>
+</body>
+</html>
